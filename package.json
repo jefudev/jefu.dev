@@ -1,10 +1,10 @@
 {
-  "name": "sapper-tailwindcss",
+  "name": "jefu-dev",
   "description": "",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/EricPKerr/sapper-tailwindcss"
+    "url": "https://github.com/jefudev/jefu-portfolio"
   },
   "scripts": {
     "dev": "sapper dev",
