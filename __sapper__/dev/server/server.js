@@ -8,7 +8,7 @@ var polka = _interopDefault(require('polka'));
 var compression = _interopDefault(require('compression'));
 var fs = _interopDefault(require('fs'));
 var path = _interopDefault(require('path'));
-var index = require('./index-19f6380f.js');
+var index = require('./index-be71770c.js');
 var Stream = _interopDefault(require('stream'));
 var http = _interopDefault(require('http'));
 var Url = _interopDefault(require('url'));
@@ -135,7 +135,7 @@ const ignore = [];
 
 const components = [
 	{
-		js: () => new Promise(function (resolve) { resolve(require('./index-f665e3d8.js')); }),
+		js: () => new Promise(function (resolve) { resolve(require('./index-dfbf425b.js')); }),
 		css: "__SAPPER_CSS_PLACEHOLDER:index.svelte__"
 	}
 ];
