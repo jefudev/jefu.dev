@@ -2,3 +2,5 @@
 **/node_modules/
 **/__sapper__
 **/temp
+node_modules
+node_modules/*
