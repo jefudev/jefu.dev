@@ -6,18 +6,39 @@
   function flipCard() {
     this.classList.toggle('is-flipped');
   }
+
+  function shrinkSiblings() {
+    var x = document.getElementsByClassName('card');
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].classList.add('card--scale-1');
+    }
+    this.classList.remove('card--scale-1');
+    // this.style.setProperty('transform', 'scale(1.11)');
+    // this.style.setProperty('opacity', '1');
+
+    console.log('ratio updated');
+  }
+  function resetScale() {
+    var x = document.getElementsByClassName('card');
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].classList.remove('card--scale-1');
+    }
+
+    console.log('ratio updated');
+  }
 </script>
 
 <style>
+  :root {
+    --card-ratio: 0.2;
+  }
   .card {
-    width: 500px;
-    height: 300px;
     perspective: 1500px;
     transition: all 0.5s ease-in-out;
-  }
-  .card:hover {
-    transform: scale(1.11) !important;
-    opacity: 1 !important;
+    -webkit-transition: all 0.5s ease-in-out;
+    height: 300px;
   }
   .card__inner {
     width: 100%;
@@ -38,9 +59,49 @@
     height: 100%;
     width: 100%;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    top: 0;
+    left: 0;
   }
   .card__back {
     transform: rotateY(-180deg);
+  }
+  /* Small (sm) */
+  @media (min-width: 640px) {
+    .card {
+      width: 500px;
+      transform: scale(min(max(calc(1.1 * var(--card-ratio)), 1), 1.1));
+      opacity: max(calc(var(--card-ratio) * 1.1), 0.7);
+    }
+    .card:hover {
+      opacity: 1;
+      transform: scale(1.11);
+    }
+    :global(.card--scale-1) {
+      transform: scale(1) !important;
+      opacity: 0.7 !important;
+    }
+    /* .cards__container .card:hover ~ .card {
+      --card-ratio: 0.2 !important;
+    } */
+  }
+
+  /* Medium (md) */
+  @media (min-width: 768px) {
+    /* ... */
+  }
+
+  /* Large (lg) */
+  @media (min-width: 1024px) {
+    /* ... */
+  }
+
+  /* Extra Large (xl) */
+  @media (min-width: 1280px) {
+    /* ... */
   }
 </style>
 
@@ -53,14 +114,15 @@
   on:change={event => (cardRatio = event.detail.entry.intersectionRatio)}
   threshold={Array.apply(null, { length: 100 }).map((n, i) => i / 100)}>
   <div
-    class="my-5 cursor-pointer card"
+    class="w-full my-5 cursor-pointer card"
     on:click={flipCard}
     bind:this={ref}
-    style="transform: scale(min(max(calc(1.1 * {cardRatio}), 1),1.1)); opacity:
-    max(calc({cardRatio} * 1.1),.7);">
-    <div class="shadow-lg opacity-100 card__inner">
+    style="--card-ratio: {cardRatio}"
+    on:mouseover={shrinkSiblings}
+    on:mouseout={resetScale}>
+    <div class="opacity-100 card__inner">
       <div
-        class="flex flex-col items-center p-4 my-4 bg-white border border-black rounded-lg card__front hover:shadow-2xl">
+        class="flex flex-col items-center p-4 my-4 bg-gray-200 border border-gray-300 rounded-lg shadow-lg card__front hover:shadow-2xl hover:bg-gray-300">
         <img
           src="https://unsplash.it/100/100?random&gravity=center"
           class="w-16 h-16 mt-3 rounded-full"

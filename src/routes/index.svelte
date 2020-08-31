@@ -22,6 +22,10 @@
   let y;
 </script>
 
+<style>
+
+</style>
+
 <SvelteSeo
   title="Home | Jeff Lau — Web Developer — Designer — Artist — Content Creator"
   description="Jeff Lau is a web developer and designer based in Denver
@@ -107,7 +111,7 @@
         class="w-full mb-8 text-6xl font-bold leading-tight text-center text-gray-900 md:text-5xl">
         Work
       </h1>
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center cards__container">
         <Cards company="Circle Graphics" on:entry={handleEntry} />
         <Cards
           company="University of California, San Diego"
