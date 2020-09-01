@@ -3,6 +3,9 @@ const colors = {
 };
 
 module.exports = {
+  future: {
+    removeDeprecatedGapUtilities: true
+  },
   theme: {
     container: {
       center: true,
@@ -12,6 +15,9 @@ module.exports = {
       colors
     }
   },
-  variants: {},
+  variants: {
+    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
+    boxShadow: ['responsive', 'hover', 'focus', 'active']
+  },
   plugins: []
 };

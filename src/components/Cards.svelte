@@ -2,6 +2,7 @@
   import Inview from 'svelte-inview';
   let ref;
   let cardRatio;
+  let m = { x: 0, y: 0 };
 
   function flipCard() {
     this.classList.toggle('is-flipped');
@@ -14,10 +15,6 @@
       x[i].classList.add('card--scale-1');
     }
     this.classList.remove('card--scale-1');
-    // this.style.setProperty('transform', 'scale(1.11)');
-    // this.style.setProperty('opacity', '1');
-
-    console.log('ratio updated');
   }
   function resetScale() {
     var x = document.getElementsByClassName('card');
@@ -25,8 +22,6 @@
     for (i = 0; i < x.length; i++) {
       x[i].classList.remove('card--scale-1');
     }
-
-    console.log('ratio updated');
   }
 </script>
 
@@ -80,13 +75,15 @@
       opacity: 1;
       transform: scale(1.11);
     }
+    .card:active {
+      transform: scale(1);
+      transition: all 0.2s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+    }
     :global(.card--scale-1) {
       transform: scale(1) !important;
       opacity: 0.7 !important;
     }
-    /* .cards__container .card:hover ~ .card {
-      --card-ratio: 0.2 !important;
-    } */
   }
 
   /* Medium (md) */
@@ -122,18 +119,18 @@
     on:mouseout={resetScale}>
     <div class="opacity-100 card__inner">
       <div
-        class="flex flex-col items-center p-4 my-4 bg-gray-200 border border-gray-300 rounded-lg shadow-lg card__front hover:shadow-2xl hover:bg-gray-300">
+        class="flex flex-col items-center p-4 my-4 bg-gray-200 border border-gray-300 rounded-lg shadow-lg card__front hover:shadow-2xl hover:bg-gray-300 active:shadow-lg">
         <img
           src="https://unsplash.it/100/100?random&gravity=center"
           class="w-16 h-16 mt-3 rounded-full"
           alt="Company Logo" />
         <p class="p-3 text-xl text-center">
-          {cardRatio}I've built and led front-end development of 6 eCommerice
-          sites from the ground up
+          I've built and led front-end development of 6 eCommerice sites from
+          the ground up
         </p>
       </div>
       <div
-        class="flex flex-col items-center p-4 my-4 bg-white border border-black rounded-lg card__back hover:shadow-2xl">
+        class="flex flex-col items-center p-4 my-4 bg-white border border-black rounded-lg shadow-lg card__back hover:shadow-2xl active:bg-gray-100 active:shadow-lg">
         <p class="p-2 text-base">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
           nemo sequi obcaecati totam repellendus? At explicabo consequatur
