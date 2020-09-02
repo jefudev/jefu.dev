@@ -1,7 +1,10 @@
 <script>
   import * as animateScroll from 'svelte-scrollto';
   import SvelteSeo from 'svelte-seo';
-  import Cards from '../components/Cards.svelte';
+  import WorkCards from '../components/WorkCards.svelte';
+  import Header from '../components/Header.svelte';
+  import Hero from '../components/Hero.svelte';
+  import Footer from '../components/Footer.svelte';
 
   import { flip } from 'svelte/animate';
   import { afterUpdate, beforeUpdate, tick } from 'svelte';
@@ -22,16 +25,6 @@
     );
     document.getElementById('circle_container').style.height = height + 'px';
   });
-  const handleEntry = ({ detail }) => {
-    direction = detail.verticalDirection;
-    if (detail.verticalDirection === 'up') {
-      console.log('going down');
-      console.log(detail.ratio);
-    } else {
-      console.log('going up');
-      console.log(detail.ratio);
-    }
-  };
 
   import { spring } from 'svelte/motion';
 
@@ -80,81 +73,11 @@
         <circle cx={$coords.x} cy={$coords.y + y} r={$size} />
       </svg>
     </div>
-    <!-- header -->
-    <header class="sticky top-0 z-50 py-4 bg-white shadow">
-      <!-- container -->
-      <div class="container px-4 mx-auto sm:px-8 lg:px-16 xl:px-20">
-        <!-- header wrapper -->
-        <div class="flex items-center justify-between">
-          <!-- header logo -->
-          <div>
-            <h1 class="font-semibold leading-relaxed text-black">
-              <!-- svelte-ignore missing-declaration -->
-              <a href="/" on:click={() => animateScroll.scrollToTop()}>
-                Jeff Lau
-              </a>
-            </h1>
-          </div>
-
-          <!-- mobile toggle -->
-          <div class="toggle md:hidden">
-            <button>
-              <svg
-                class="w-6 h-6 text-black fill-current"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-          </div>
-
-          <!-- Navbar -->
-          <navbar class="hidden navbar md:block">
-            <ul class="flex space-x-8 text-sm font-semibold">
-              <li>
-                <button class="hover:text-orange-500">Work</button>
-              </li>
-              <li>
-                <button class="hover:text-orange-500">About</button>
-              </li>
-            </ul>
-          </navbar>
-        </div>
-      </div>
-    </header>
-    <!-- end header -->
-    <!-- hero -->
-    <div class="py-16 bg-gray-100 hero">
-      <!-- container -->
-      <div class="container px-4 mx-auto sm:px-8 lg:px-16 xl:px-20">
-        <!-- hero wrapper -->
-        <div class="grid items-center grid-cols-1 gap-8 md:grid-cols-12">
-          <!-- hero text -->
-          <div class="col-span-6 hero-text ">
-            <h1
-              class="max-w-xl text-6xl font-bold leading-tight text-gray-900 md:text-5xl">
-              Hello, I'm Jeff.
-            </h1>
-            <hr class="w-24 mt-8 border-black" />
-            <p
-              class="mt-8 text-4xl font-semibold leading-relaxed text-gray-800">
-              I am a web developer based in Denver, Colorado.
-            </p>
-          </div>
-          <!-- hero image -->
-          <div class="col-span-6 hero-image">
-            <img src="/home-bike.png" alt="Vector Art of Guy Riding a Bike" />
-          </div>
-        </div>
-      </div>
-    </div>
+    <Header />
+    <Hero />
 
     <div
-      class="py-16 bg-white"
+      class="py-16 bg-white work__cards"
       on:mouseenter={() => {
         size.set(100);
         mouseDownSize = 150;
@@ -165,26 +88,34 @@
         mouseDownSize = 30;
         mouseUpSize = 10;
       }}>
-      <!-- container -->
-      <div class="container w-screen px-4 mx-auto sm:px-8 lg:px-16 xl:px-20">
+      <WorkCards />
+    </div>
+    <div class="sticky p-16 bg-gray-100" id="about">
+      <div class="container flex flex-col items-center justify-center">
         <h1
           class="w-full mb-8 text-6xl font-bold leading-tight text-center text-gray-900 md:text-5xl">
-          Work
+          About
         </h1>
-        <div class="flex flex-col items-center cards__container">
-          <Cards company="Circle Graphics" on:entry={handleEntry} />
-          <Cards
-            company="University of California, San Diego"
-            on:entry={handleEntry} />
-          <Cards company="Infinite Domain" on:entry={handleEntry} />
-          <Cards company="Film" on:entry={handleEntry} />
-          <Cards company="Illustrations" on:entry={handleEntry} />
+        <div class="flex-1 p-4 bg-white border border-gray-300 rounded-lg ">
+          Voluptate irure aliquip consectetur occaecat consequat nulla eiusmod
+          quis aute laborum dolore ipsum enim. Et voluptate excepteur incididunt
+          non dolor veniam. Aliqua excepteur sit culpa est ipsum id do. Ad
+          cupidatat commodo non quis velit cupidatat ea qui proident eiusmod
+          mollit. Sit in aute Lorem cillum tempor ipsum pariatur magna eiusmod
+          deserunt velit voluptate enim est.
+        </div>
+        <div class="flex-1 p-4 bg-white border border-gray-300 rounded-lg ">
+          Voluptate irure aliquip consectetur occaecat consequat nulla eiusmod
+          quis aute laborum dolore ipsum enim. Et voluptate excepteur incididunt
+          non dolor veniam. Aliqua excepteur sit culpa est ipsum id do. Ad
+          cupidatat commodo non quis velit cupidatat ea qui proident eiusmod
+          mollit. Sit in aute Lorem cillum tempor ipsum pariatur magna eiusmod
+          deserunt velit voluptate enim est.
         </div>
       </div>
     </div>
-    <div class="sticky h-screen py-16 bg-gray-100 hero" />
-    <!-- end hero -->
 
   </body>
+  <Footer />
 
 </html>

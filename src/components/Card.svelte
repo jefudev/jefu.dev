@@ -119,7 +119,7 @@
     on:mouseout={resetScale}>
     <div class="opacity-100 card__inner">
       <div
-        class="flex flex-col items-center p-4 my-4 bg-gray-200 border border-gray-300 rounded-lg shadow-lg card__front hover:shadow-2xl hover:bg-gray-300 active:shadow-lg">
+        class="flex flex-col items-center p-4 my-4 bg-gray-200 border border-gray-300 rounded-lg shadow-lg card__front hover:shadow-2xl hover:bg-gray-300 active:bg-gray-400 active:shadow-lg active:opacity-75">
         <img
           src="https://unsplash.it/100/100?random&gravity=center"
           class="w-16 h-16 mt-3 rounded-full"
@@ -130,7 +130,7 @@
         </p>
       </div>
       <div
-        class="flex flex-col items-center p-4 my-4 bg-white border border-black rounded-lg shadow-lg card__back hover:shadow-2xl active:bg-gray-100 active:shadow-lg">
+        class="flex flex-col items-center p-4 my-4 bg-white border border-black rounded-lg shadow-lg card__back hover:shadow-2xl active:bg-gray-100 active:shadow-lg active:opacity-75">
         <p class="p-2 text-base">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
           nemo sequi obcaecati totam repellendus? At explicabo consequatur
