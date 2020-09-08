@@ -16,12 +16,13 @@
           &copy; Jeff Lau, {year}
         </h1>
         <p class="text-base leading-relaxed">
-          Designed by Jeff. Developed in Svelte.
+          Designed by Jeff. Made with Svelte.
         </p>
         <p class="text-base leading-relaxed">
           <a href="https://www.linkedin.com/in/jefudev/" class="pr-2">
             LinkedIn
           </a>
+          <a href="https://github.com/jefudev" class="pr-2">GitHub</a>
           <a href="https://twitter.com/jefudev" class="pr-2">Twitter</a>
           <a href="mailto:hi@jefu.dev">Email</a>
         </p>

@@ -6,7 +6,8 @@
       <!-- hero text -->
       <div class="col-span-6 hero-text ">
         <h1
-          class="max-w-xl text-6xl font-bold leading-tight text-gray-900 md:text-5xl">
+          class="max-w-xl text-6xl font-bold leading-tight text-gray-900
+          md:text-5xl">
           Hello, I'm Jeff.
         </h1>
         <hr class="w-24 mt-8 border-black" />

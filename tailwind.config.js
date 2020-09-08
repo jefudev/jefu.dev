@@ -6,6 +6,7 @@ module.exports = {
   future: {
     removeDeprecatedGapUtilities: true
   },
+  purge: ['./src/**/*.svelte'],
   theme: {
     container: {
       center: true,

@@ -31,13 +31,16 @@
       <navbar class="hidden navbar md:block">
         <ul class="flex space-x-8 text-sm font-semibold">
           <li>
-            <button class="hover:text-orange-500">Work</button>
+            <button class="px-4 py-2 hover:text-indigo-800">Work</button>
           </li>
           <li>
-            <button class="hover:text-orange-500">About</button>
+            <button class="px-4 py-2 hover:text-indigo-800">About</button>
           </li>
           <li>
-            <button class="hover:text-orange-500">Contact</button>
+            <button
+              class="px-4 py-2 text-white bg-indigo-800 rounded-full hover:bg-indigo-900">
+              Contact
+            </button>
           </li>
         </ul>
       </navbar>
