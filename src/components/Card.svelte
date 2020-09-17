@@ -86,7 +86,7 @@
   let:scrollDirection
   let:entry
   wrapper={ref}
-  rootMargin="-20% 0px"
+  rootMargin="-25% 0px"
   unobserveOnEnter="true"
   on:change={event => (cardRatio = event.detail.entry.intersectionRatio)}>
   <div
@@ -96,7 +96,10 @@
     {#if inView}
       <div class="opacity-100 card__inner" in:fly={{ y: 100, duration: 1000 }}>
         <div
-          class="flex flex-row items-center justify-center p-4 my-4 bg-gray-200 border border-gray-300 rounded-lg shadow-lg card__front hover:shadow-2xl hover:bg-gray-300 active:bg-gray-400 active:shadow-inner active:opacity-75">
+          class="flex flex-row items-center justify-center p-4 my-4 bg-gray-200
+          border border-gray-300 rounded-lg shadow-lg card__front
+          hover:shadow-2xl hover:bg-gray-300 active:bg-gray-400
+          active:shadow-inner active:opacity-75">
           <img
             src={data.img}
             class="flex-none w-16 h-16 rounded-full"
@@ -108,12 +111,15 @@
           </p>
           <a
             href="/"
-            class="absolute bottom-0 right-0 p-1 px-3 text-xs font-bold uppercase">
+            class="absolute bottom-0 right-0 p-1 px-3 text-xs font-bold
+            uppercase">
             View More
           </a>
         </div>
         <div
-          class="flex flex-col items-center justify-center p-4 my-4 bg-white border border-black rounded-lg shadow-lg card__back hover:shadow-2xl active:bg-gray-100 active:shadow-inner active:opacity-75">
+          class="flex flex-col items-center justify-center p-4 my-4 bg-white
+          border border-black rounded-lg shadow-lg card__back hover:shadow-2xl
+          active:bg-gray-100 active:shadow-inner active:opacity-75">
           {#if backVisible}
             <p
               class="p-2 text-base"

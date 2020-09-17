@@ -17,7 +17,9 @@
       </div>
       <!-- hero image -->
       <div class="col-span-6 hero-image">
-        <img src="/home-bike.png" alt="Vector Art of Guy Riding a Bike" />
+        <img
+          src="/hero-scrapbook.png"
+          alt="Collage of Jeff with scribbles and objects" />
       </div>
     </div>
   </div>

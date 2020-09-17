@@ -34,6 +34,7 @@
     "dotenv": "^8.2.0",
     "polka": "^0.5.2",
     "sirv": "^0.4.2",
+    "svelte-preprocess": "^4.3.0",
     "svelte-seo": "^1.0.1"
   },
   "devDependencies": {

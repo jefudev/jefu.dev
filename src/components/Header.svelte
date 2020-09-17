@@ -29,16 +29,23 @@
 
       <!-- Navbar -->
       <navbar class="hidden navbar md:block">
-        <ul class="flex space-x-8 text-sm font-semibold">
+        <ul class="flex space-x-8 text-sm">
           <li>
-            <button class="px-4 py-2 hover:text-indigo-800">Work</button>
-          </li>
-          <li>
-            <button class="px-4 py-2 hover:text-indigo-800">About</button>
+            <button
+              class="px-4 py-2 font-medium duration-500 hover:text-jefu-blue-700">
+              Work
+            </button>
           </li>
           <li>
             <button
-              class="px-4 py-2 text-white bg-indigo-800 rounded-full hover:bg-indigo-900">
+              class="px-4 py-2 font-medium duration-500 hover:text-jefu-blue-700">
+              About
+            </button>
+          </li>
+          <li>
+            <button
+              class="px-4 py-2 font-medium text-white duration-500 rounded-full
+              bg-jefu-blue-500 hover:bg-jefu-blue-700">
               Contact
             </button>
           </li>

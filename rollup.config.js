@@ -8,10 +8,12 @@ import svelte from 'rollup-plugin-svelte';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
+import sveltePreprocess from 'svelte-preprocess';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
+const production = !process.env.ROLLUP_WATCH;
 
 const onwarn = (warning, onwarn) =>
   (warning.code === 'CIRCULAR_DEPENDENCY' &&
@@ -28,7 +30,12 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
   // Include any special characters you're using in this regular expression
   defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
 });
-
+const preprocess = sveltePreprocess({
+  sourceMap: !production,
+  postcss: {
+    plugins: [require('tailwindcss'), require('autoprefixer')]
+  }
+});
 export default {
   client: {
     input: config.client.input(),
@@ -41,7 +48,8 @@ export default {
       svelte({
         dev,
         hydratable: true,
-        emitCss: true
+        emitCss: true,
+        preprocess
       }),
       resolve({
         browser: true,
