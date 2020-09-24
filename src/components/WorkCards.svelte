@@ -25,9 +25,10 @@
 </script>
 
 <!-- container -->
-<div class="container w-screen px-4 mx-auto sm:px-8 lg:px-16 xl:px-20">
+<div
+  class="container w-screen min-h-screen px-4 mx-auto sm:px-8 lg:px-16 xl:px-20">
   <h1
-    class="w-full mb-8 text-6xl font-bold leading-tight text-center text-gray-900 md:text-5xl">
+    class="w-full mb-8 text-5xl font-bold leading-tight text-center text-gray-900 font--brume">
     Work
   </h1>
   <div class="flex flex-col items-center cards__container">

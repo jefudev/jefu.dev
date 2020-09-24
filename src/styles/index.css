@@ -4,3 +4,15 @@
 @import './components';
 
 @import 'tailwindcss/utilities';
+
+@font-face {
+  font-family: 'Brume-Regular';
+
+  src: url('/fonts/Brume.woff2') format('woff2'); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font--brume {
+  font-family: 'Brume-Regular';
+}

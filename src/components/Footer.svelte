@@ -12,7 +12,7 @@
   <div class="container px-4 mx-auto sm:px-8 lg:px-16 xl:px-20">
     <div class="flex items-center justify-start">
       <div>
-        <h1 class="font-semibold leading-relaxed text-black ">
+        <h1 class="font-semibold leading-relaxed text-gray-900 ">
           &copy; Jeff Lau, {year}
         </h1>
         <p class="text-base leading-relaxed">

@@ -23,7 +23,7 @@
   <body class="antialiased transition-all duration-500">
     <Header />
     <Hero />
-    <div class="py-16 bg-white work__cards">
+    <div class="py-16 bg-white work__cards" id="work">
       <WorkCards />
     </div>
     <div class="sticky p-16 bg-gray-100" id="about">
@@ -31,14 +31,15 @@
         <div class="grid items-center grid-cols-1 gap-8 md:grid-cols-12">
           <div class="col-span-12">
             <h1
-              class="w-full mb-8 text-6xl font-bold leading-tight text-center text-gray-900 md:text-5xl">
+              id="about"
+              class="w-full mb-8 text-5xl font-bold leading-tight text-center text-gray-900 font--brume">
               About
             </h1>
           </div>
           <div class="col-span-6">
 
             <div class="p-4">
-              <img src="/run-dance.png" alt="Vector Art of Guy Running" />
+              <img src="/about-scrapbook.png" alt="Vector Art of Guy Running" />
             </div>
           </div>
           <div class="col-span-6">

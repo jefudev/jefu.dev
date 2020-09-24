@@ -1,21 +1,27 @@
+<script>
+  import * as animateScroll from 'svelte-scrollto';
+</script>
+
 <header class="sticky top-0 z-50 py-4 bg-white border-b-2">
   <!-- container -->
-  <div class="container px-4 mx-auto sm:px-8 lg:px-16 xl:px-20">
+  <div class="container px-4 mx-auto sm:px-8 xl:px-20">
     <!-- header wrapper -->
     <div class="flex items-center justify-between">
       <!-- header logo -->
-      <div>
-        <h1 class="font-semibold leading-relaxed text-black">
-          <!-- svelte-ignore missing-declaration -->
-          <a href="/" on:click={() => animateScroll.scrollToTop()}>Jeff Lau</a>
+      <button
+        class="px-4 py-1 duration-500 bg-gray-900 rounded-lg hover:bg-jefu-blue-500"
+        on:click={() => animateScroll.scrollToTop()}>
+        <h1
+          class="text-2xl font-semibold leading-relaxed text-white font--brume">
+          J
         </h1>
-      </div>
+      </button>
 
       <!-- mobile toggle -->
       <div class="toggle md:hidden">
         <button>
           <svg
-            class="w-6 h-6 text-black fill-current"
+            class="w-6 h-6 text-gray-900 fill-current"
             fill="none"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -29,24 +35,25 @@
 
       <!-- Navbar -->
       <navbar class="hidden navbar md:block">
-        <ul class="flex space-x-8 text-sm">
+        <ul class="flex space-x-8 text-lg">
           <li>
             <button
-              class="px-4 py-2 font-medium duration-500 hover:text-jefu-blue-700">
+              on:click={() => animateScroll.scrollTo({
+                  element: '#work',
+                  offset: -80
+                })}
+              class="px-4 py-2 font-medium duration-500 hover:text-jefu-blue-500">
               Work
             </button>
           </li>
           <li>
             <button
-              class="px-4 py-2 font-medium duration-500 hover:text-jefu-blue-700">
+              on:click={() => animateScroll.scrollTo({
+                  element: '#about',
+                  offset: -80
+                })}
+              class="px-4 py-2 font-medium duration-500 hover:text-jefu-blue-500">
               About
-            </button>
-          </li>
-          <li>
-            <button
-              class="px-4 py-2 font-medium text-white duration-500 rounded-full
-              bg-jefu-blue-500 hover:bg-jefu-blue-700">
-              Contact
             </button>
           </li>
         </ul>
