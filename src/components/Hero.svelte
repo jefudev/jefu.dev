@@ -106,7 +106,7 @@
 </style>
 
 <svelte:window on:resize={updatesAnnotation} />
-<div class="sticky py-16 bg-gray-100 hero">
+<div class="sticky z-10 py-16 bg-gray-100 hero">
   <!-- container -->
   <div
     class="container px-4 mx-auto transition-all duration-300 sm:px-8 xl:px-20">

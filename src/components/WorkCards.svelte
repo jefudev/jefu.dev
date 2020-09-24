@@ -26,18 +26,51 @@
       img: 'https://unsplash.it/200/200?random&gravity=center'
     }
   ];
+  let y;
 </script>
 
+<style>
+  .parallax__container {
+    position: fixed;
+    height: 800px;
+  }
+  .parallax__img {
+    position: absolute;
+    max-width: 300px;
+    width: auto;
+    justify-self: center;
+    transition: transform 0.2s ease-out;
+    margin-top: 50px;
+  }
+</style>
+
+<svelte:window bind:scrollY={y} />
 <!-- container -->
+
 <div
   class="container w-screen min-h-screen px-4 mx-auto sm:px-8 lg:px-16 xl:px-20">
   <h1
     class="w-full mb-8 text-5xl font-bold leading-tight text-center text-gray-900 font--brume">
     Work
   </h1>
-  <div class="flex flex-col items-center cards__container">
+  <div class="relative z-10 flex flex-col items-center cards__container">
     {#each works as work}
       <Card data={work} />
     {/each}
   </div>
+  <div class="container top-0 z-0 parallax__container">
+    <img
+      class="parallax__img"
+      style="transform: translate(0,{(-y * -1) / 5}px) rotate({y}deg);height:50px;
+      right:350px"
+      src="shapes/scribble-5-min.png"
+      alt="shape layer scribble" />
+    <img
+      class="parallax__img"
+      style="transform: translate(0,{(-y * -3) / 5}px) rotateY({y / 20}deg)
+      rotate({y / 10}deg);transform-style:preserve-3d;"
+      src="shapes/grid-min.png"
+      alt="shape layer grid" />
+  </div>
+
 </div>
