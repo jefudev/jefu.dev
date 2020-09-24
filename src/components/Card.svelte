@@ -1,8 +1,7 @@
 <script>
   import Inview from 'svelte-inview';
-  import { fly, slide, fade } from 'svelte/transition';
+  import { fly, slide } from 'svelte/transition';
   let ref;
-  let cardRatio;
   let m = { x: 0, y: 0 };
   let backVisible = false;
   export let data;
@@ -21,12 +20,14 @@
     .card {
       perspective: 1500px;
       width: 500px;
-      transition: all 0.5s ease-in-out;
-      -webkit-transition: all 0.5s ease-in-out;
+      opacity: 0;
+      transition: all 0.2s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+      transform: translateY(200px);
     }
     .card:hover {
       opacity: 1;
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
     .card:active {
       transform: scale(1);
@@ -63,6 +64,14 @@
       position: absolute;
       transform: rotateY(-180deg);
     }
+    .animate {
+      opacity: 1;
+      transition-duration: 0.8s;
+      transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transform: translateY(0);
+      -moz-transform: translateY(0);
+    }
   }
 
   /* Medium (md) */
@@ -87,33 +96,36 @@
   let:entry
   wrapper={ref}
   rootMargin="-25% 0px"
-  unobserveOnEnter="true"
-  on:change={event => (cardRatio = event.detail.entry.intersectionRatio)}>
-  <div
-    class="w-full my-5 cursor-pointer card"
-    on:click={flipCard}
-    bind:this={ref}>
-    {#if inView}
-      <div class="opacity-100 card__inner" in:fly={{ y: 100, duration: 1000 }}>
-        <div
-          class="flex flex-row items-center justify-center p-4 my-4 bg-gray-200 border border-gray-300 rounded-lg shadow-lg card__front hover:shadow-2xl hover:bg-gray-300 active:bg-gray-400 active:shadow-inner active:opacity-75">
+  unobserveOnEnter="true">
+  <div bind:this={ref}>
+    <div
+      class="w-full my-5 cursor-pointer card"
+      on:click={flipCard}
+      class:animate={inView}>
+      <div
+        class="bg-gray-200 border border-gray-300 rounded-lg opacity-100 card__inner card__front hover:bg-gray-300 active:bg-gray-400 active:opacity-75">
+        <div class="flex items-center px-4 pt-4">
           <img
             src={data.img}
-            class="flex-none w-16 h-16 rounded-full"
+            class="flex-initial w-16 h-16 rounded-full"
             alt="Company Logo" />
-          <p class="flex-grow p-3 pl-6 text-lg text-left">
-            <span class="text-sm font-bold uppercase ">{data.frontHeader}</span>
+          <p
+            class="flex-auto pl-4 text-sm font-bold leading-4 text-left uppercase">
+            {data.frontHeader}
             <br />
-            {data.frontBody}
+            Front-end Dev, Design, design, design, design, design
           </p>
-          <a
-            href="/"
-            class="absolute bottom-0 right-0 p-1 px-3 text-xs font-bold uppercase">
-            View More
-          </a>
         </div>
+        <div class="flex px-4 pt-2 pb-6">
+          <div class="w-full">{data.frontBody}</div>
+        </div>
+        <a
+          href="/"
+          class="absolute bottom-0 right-0 p-1 px-3 text-xs font-bold uppercase">
+          View More
+        </a>
         <div
-          class="flex flex-col items-center justify-center p-4 my-4 bg-white border border-black rounded-lg shadow-lg card__back hover:shadow-2xl active:bg-gray-100 active:shadow-inner active:opacity-75">
+          class="flex flex-col items-center justify-center p-4 my-4 bg-white border border-black rounded-lg card__back active:bg-gray-100 active:opacity-75">
           {#if backVisible}
             <p
               class="p-2 text-base"
@@ -129,6 +141,6 @@
           {/if}
         </div>
       </div>
-    {/if}
+    </div>
   </div>
 </Inview>

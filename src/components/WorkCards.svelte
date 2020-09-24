@@ -10,11 +10,15 @@
     },
     {
       work: 'University of California, San Diego',
-      img: 'https://unsplash.it/100/200?random&gravity=center'
+      img: 'https://unsplash.it/100/200?random&gravity=center',
+      frontBody:
+        'Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.'
     },
     {
       work: 'Infinite Domain',
-      img: 'https://unsplash.it/200/100?random&gravity=center'
+      img: 'https://unsplash.it/200/100?random&gravity=center',
+      frontBody:
+        'Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.'
     },
     { work: 'Film', img: 'https://unsplash.it/100/300?random&gravity=center' },
     {

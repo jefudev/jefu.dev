@@ -2,8 +2,10 @@
   import * as animateScroll from 'svelte-scrollto';
   import { onMount } from 'svelte';
   import { annotate, annotationGroup } from 'rough-notation';
+  import Inview from 'svelte-inview';
+  let ref;
 
-  onMount(() => {
+  onMount(async () => {
     addAnnotations();
   });
   let ag;
@@ -16,13 +18,12 @@
     const a3 = annotate(document.querySelector('#e3'), {
       type: 'circle'
     });
-    const a4 = annotate(document.querySelector('#e4'), {
-      type: 'highlight',
-      color: '#FFEA34'
-    });
-
-    ag = annotationGroup([a1, a2, a3, a4]);
+    ag = annotationGroup([a1, a2, a3]);
     ag.show();
+
+    const a4 = document.querySelector('#e4');
+    const annotateA4 = annotate(a4, { type: 'highlight', color: '#FFEA34' });
+    annotateA4.show();
   }
   function updatesAnnotation() {
     ag.hide();
@@ -128,11 +129,19 @@
         </p>
       </div>
       <!-- hero image -->
-      <div class="col-span-12 md:col-span-7 md:py-12 lg:p-16">
-        <img
-          src="/hero-scrapbook.png"
-          alt="Collage of Jeff with scribbles and objects" />
-      </div>
+      <Inview
+        let:inView
+        let:scrollDirection
+        wrapper={ref}
+        rootMargin="-50px"
+        unobserveOnEnter={true}>
+        <div class="col-span-12 md:col-span-7 md:py-12 lg:p-16" bind:this={ref}>
+          <img
+            class:imageFadeIn={inView}
+            src="/hero-scrapbook.png"
+            alt="Collage of Jeff with scribbles and objects" />
+        </div>
+      </Inview>
       <div class="block col-span-12 md:hidden">
         <h1
           class="max-w-xl pb-8 text-6xl font-bold text-center text-gray-900 font--brume">
