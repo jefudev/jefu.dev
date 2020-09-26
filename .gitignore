@@ -7,3 +7,4 @@ node_modules/*
 __sapper__/dev/server/server.js
 __sapper__/dev/service-worker.js
 __sapper__/dev/build.json
+__sapper__

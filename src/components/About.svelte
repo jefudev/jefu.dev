@@ -3,6 +3,12 @@
   let ref;
 </script>
 
+<style>
+  .placeholder {
+    height: 525px;
+  }
+</style>
+
 <div class="sticky p-16 bg-gray-100" id="about">
   <div class="container">
     <div class="grid items-center grid-cols-1 gap-8 md:grid-cols-12">

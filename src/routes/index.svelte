@@ -15,12 +15,6 @@
   let y;
 </script>
 
-<style>
-  .placeholder {
-    height: 525px;
-  }
-</style>
-
 <svelte:window bind:scrollY={y} />
 <SvelteSeo
   title="Home | Jeff Lau — Web Developer — Designer — Artist — Content Creator"
