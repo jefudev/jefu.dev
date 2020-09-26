@@ -24421,7 +24421,6 @@ video {
 .imageFadeIn {
   -webkit-animation: fade-in-fwd 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fade-in-fwd 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  opacity: 0;
 }
 
 @-webkit-keyframes fade-in-fwd {

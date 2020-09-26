@@ -115,7 +115,8 @@
       <!-- hero text -->
       <div class="hidden col-span-5 md:block">
         <h1
-          class="max-w-xl text-6xl font-bold text-gray-900 font--brume md:text-5xl">
+          class="max-w-xl text-6xl font-bold text-gray-900 font--brume
+          md:text-5xl">
           Hello, I'm
           <span id="e1">Jeff</span>
         </h1>
@@ -137,6 +138,7 @@
         unobserveOnEnter={true}>
         <div class="col-span-12 md:col-span-7 md:py-12 lg:p-16" bind:this={ref}>
           <img
+            class="opacity-0"
             class:imageFadeIn={inView}
             src="/hero-scrapbook.png"
             alt="Collage of Jeff with scribbles and objects" />
@@ -144,7 +146,8 @@
       </Inview>
       <div class="block col-span-12 md:hidden">
         <h1
-          class="max-w-xl pb-8 text-6xl font-bold text-center text-gray-900 font--brume">
+          class="max-w-xl pb-8 text-6xl font-bold text-center text-gray-900
+          font--brume">
           Hello, I'm
           <span id="e4">Jeff</span>
         </h1>
