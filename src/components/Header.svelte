@@ -1,5 +1,14 @@
 <script>
   import * as animateScroll from 'svelte-scrollto';
+  import { blur } from 'svelte/transition';
+  import { quintOut } from 'svelte/easing';
+  let animateHello = false;
+  function handleMouseOver(e) {
+    animateHello = true;
+  }
+  function handleMouseOut(e) {
+    animateHello = false;
+  }
 </script>
 
 <header class="sticky top-0 z-50 py-4 bg-white border-b-2">
@@ -38,24 +47,22 @@
         <ul class="flex space-x-8 text-lg">
           <li>
             <button
+              on:mouseover={handleMouseOver}
+              on:mouseout={handleMouseOut}
               on:click={() => animateScroll.scrollTo({
                   element: '#work',
                   offset: -80
                 })}
-              class="px-4 py-2 font-medium duration-500 hover:text-jefu-blue-500">
-              Work
+              class="px-4 py-2 font-medium duration-500 hover:text-gray-900">
+              {#if animateHello}
+                <span transition:blur={{ amount: 6 }} class="font-bold">
+                  Hello, Friend.
+                </span>
+              {/if}
+              <span>&#x1F44B;</span>
             </button>
           </li>
-          <li>
-            <button
-              on:click={() => animateScroll.scrollTo({
-                  element: '#about',
-                  offset: -80
-                })}
-              class="px-4 py-2 font-medium duration-500 hover:text-jefu-blue-500">
-              About
-            </button>
-          </li>
+
         </ul>
       </navbar>
     </div>

@@ -31,9 +31,7 @@
   <body class="antialiased transition-all duration-500">
     <Header />
     <Hero />
-    <div class="py-16 bg-white work__cards" id="work">
-      <WorkCards />
-    </div>
+    <div class="py-16 bg-white work__cards" id="work" />
     <div class="sticky p-16 bg-gray-100" id="about">
       <div class="container">
         <div class="grid items-center grid-cols-1 gap-8 md:grid-cols-12">
@@ -66,13 +64,17 @@
               <div
                 class="p-4 text-lg leading-relaxed text-gray-900 duration-500 delay-1000 opacity-0"
                 class:opacity-100={inView}>
-                Voluptate irure aliquip consectetur occaecat consequat nulla
-                eiusmod quis aute laborum dolore ipsum enim. Et voluptate
-                excepteur incididunt non dolor veniam. Aliqua excepteur sit
-                culpa est ipsum id do. Ad cupidatat commodo non quis velit
-                cupidatat ea qui proident eiusmod mollit. Sit in aute Lorem
-                cillum tempor ipsum pariatur magna eiusmod deserunt velit
-                voluptate enim est.
+                Jeff is an experienced web developer, designer, and artist. When growing up in San Francisco, he spent his time building computers and learning new art mediums. It wasn't until college where he studied Interdiscplinary Computing and the Art(ICAM) that he was able to 
+                
+                During his undergrad at UC San Diego, 
+
+                Driven by [], he takes pride in providing 
+
+                I believe the intersection between art and technology the closest reality we have from science fiction. I love 
+                Beginn
+                design and tech growing up. box of crayons with a sharpener on the back. learning to code with a turtle [https://www.eclipse.org/Xtext/documentation/208_tortoise.html]
+                middle
+                end
               </div>
             </div>
           </Inview>
