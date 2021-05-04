@@ -3,6 +3,10 @@ module.exports = {
     removeDeprecatedGapUtilities: true
   },
   theme: {
+    fontFamily: {
+      'body': ['Inter', 'Helvetica', 'sans-serif'],
+      'sans': ['Inter', 'Helvetica', 'sans-serif']
+    },
     container: {
       center: true,
       padding: '2rem'

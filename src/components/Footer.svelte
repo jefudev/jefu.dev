@@ -8,7 +8,7 @@
   });
 </script>
 
-<footer class="sticky z-50 py-16 bg-white border-t-2">
+<footer class="sticky z-50 py-16 bg-blue-700 border-t-2 border-blue-600">
   <div class="container px-4 mx-auto sm:px-8 lg:px-16 xl:px-20">
     <div class="flex items-center justify-start">
       <div>

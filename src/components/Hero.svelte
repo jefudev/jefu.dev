@@ -1,36 +1,7 @@
 <script>
   import * as animateScroll from 'svelte-scrollto';
-  import { onMount } from 'svelte';
-  import { annotate, annotationGroup } from 'rough-notation';
   import Inview from 'svelte-inview';
   let ref;
-
-  onMount(async () => {
-    addAnnotations();
-  });
-  let ag;
-  function addAnnotations() {
-    const a1 = annotate(document.querySelector('#e1'), {
-      type: 'highlight',
-      color: '#FFEA34'
-    });
-    const a2 = annotate(document.querySelector('#e2'), { type: 'underline' });
-    const a3 = annotate(document.querySelector('#e3'), {
-      type: 'circle'
-    });
-    ag = annotationGroup([a1, a2, a3]);
-    ag.show();
-
-    const a4 = document.querySelector('#e4');
-    const annotateA4 = annotate(a4, { type: 'highlight', color: '#FFEA34' });
-    annotateA4.show();
-  }
-  function updatesAnnotation() {
-    ag.hide();
-    setTimeout(function() {
-      ag.show();
-    }, 1500);
-  }
 </script>
 
 <style>
@@ -105,8 +76,7 @@
   }
 </style>
 
-<svelte:window on:resize={updatesAnnotation} />
-<div class="sticky z-10 py-16 bg-gray-100 hero">
+<div class="sticky z-10 py-16 bg-gray-900 hero">
   <!-- container -->
   <div
     class="container px-4 mx-auto transition-all duration-300 sm:px-8 xl:px-20">
@@ -115,17 +85,15 @@
       <!-- hero text -->
       <div class="hidden col-span-5 md:block">
         <h1
-          class="max-w-xl text-6xl font-bold text-gray-900 font--brume md:text-5xl">
-          Hello, I'm
-          <span id="e1">Jeff</span>
+          class="max-w-xl font-bold text-gray-100 font--brume md:text-5xl"
+          style="font-size: 4em;">
+          Hello,
+          <br />
+          I'm Jeff
         </h1>
-        <hr class="w-24 mt-8 border-black" />
-        <p class="mt-8 text-2xl font-semibold leading-relaxed text-gray-800">
-          I am a
-          <span id="e2">web developer</span>
-          and
-          <span id="e3">designer</span>
-          based in Denver, Colorado
+        <hr class="w-24 mt-8 border-gray-100" />
+        <p class="mt-8 text-2xl font-semibold leading-relaxed text-gray-100">
+          I am a UX designer/developer making cool things on the web
         </p>
       </div>
       <!-- hero image -->
@@ -137,6 +105,7 @@
         unobserveOnEnter={true}>
         <div class="col-span-12 md:col-span-7 md:py-12 lg:p-16" bind:this={ref}>
           <img
+            class="opacity-0"
             class:imageFadeIn={inView}
             src="/hero-scrapbook.png"
             alt="Collage of Jeff with scribbles and objects" />
@@ -144,7 +113,7 @@
       </Inview>
       <div class="block col-span-12 md:hidden">
         <h1
-          class="max-w-xl pb-8 text-6xl font-bold text-center text-gray-900 font--brume">
+          class="max-w-xl pb-8 text-5xl font-bold text-center text-gray-100 font--brume">
           Hello, I'm
           <span id="e4">Jeff</span>
         </h1>
@@ -158,7 +127,7 @@
         })}>
       <svg
         enable-background="new 0 0 32 32"
-        class="text-gray-900 fill-current hover:text-jefu-blue-500"
+        class="text-gray-100 fill-current hover:text-blue-700"
         height="32px"
         version="1.1"
         viewBox="0 0 32 32"

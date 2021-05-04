@@ -11,14 +11,14 @@
   }
 </script>
 
-<header class="sticky top-0 z-50 py-4 bg-white border-b-2">
+<header class="sticky top-0 z-50 py-4 bg-transparent">
   <!-- container -->
   <div class="container px-4 mx-auto sm:px-8 xl:px-20">
     <!-- header wrapper -->
     <div class="flex items-center justify-between">
       <!-- header logo -->
       <button
-        class="px-4 py-1 duration-500 bg-gray-900 rounded-lg hover:bg-jefu-blue-500"
+        class="px-4 py-1 duration-500 bg-blue-900 rounded-lg hover:bg-blue-700"
         on:click={() => animateScroll.scrollToTop()}>
         <h1
           class="text-2xl font-semibold leading-relaxed text-white font--brume">
@@ -30,7 +30,7 @@
       <div class="toggle md:hidden">
         <button>
           <svg
-            class="w-6 h-6 text-gray-900 fill-current"
+            class="w-6 h-6 text-gray-100 fill-current"
             fill="none"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -46,21 +46,35 @@
       <navbar class="hidden navbar md:block">
         <ul class="flex space-x-8 text-lg">
           <li>
-            <button
+            <div
               on:mouseover={handleMouseOver}
               on:mouseout={handleMouseOut}
               on:click={() => animateScroll.scrollTo({
-                  element: '#work',
+                  element: '#about',
                   offset: -80
                 })}
-              class="px-4 py-2 font-medium duration-500 hover:text-gray-900">
+              class="px-4 py-2 font-medium text-gray-100 duration-500 cursor-pointer hover:text-gray-100">
               {#if animateHello}
-                <span transition:blur={{ amount: 6 }} class="font-bold">
+                <p
+                  transition:blur={{ amount: 6 }}
+                  class="inline-block font-bold">
                   Hello, Friend.
-                </span>
+                </p>
               {/if}
-              <span>&#x1F44B;</span>
-            </button>
+              <svg
+                class="inline-block h-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9
+                  9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
           </li>
 
         </ul>
