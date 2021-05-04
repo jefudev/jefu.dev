@@ -41,7 +41,7 @@
         <div
           class="grid gap-20 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center">
           <div class="">
-            <img src="http://placeskull.com/249" alt="" />
+            <img src="https://placeskull.com/249" alt="" />
             <p
               class="pt-4 text-lg font-semibold leading-relaxed text-center text-gray-900">
               Jeff is based in
@@ -50,7 +50,7 @@
             </p>
           </div>
           <div>
-            <img src="http://placeskull.com/250" alt="" />
+            <img src="https://placeskull.com/250" alt="" />
             <p
               class="pt-4 text-lg font-semibold leading-relaxed text-center text-gray-900">
               UX/UI Developer
@@ -59,7 +59,7 @@
             </p>
           </div>
           <div>
-            <img src="http://placeskull.com/251" alt="" />
+            <img src="https://placeskull.com/251" alt="" />
             <p
               class="pt-4 text-lg font-semibold leading-relaxed text-center text-gray-900">
               Currently studying
@@ -70,7 +70,7 @@
             </p>
           </div>
           <div>
-            <img src="http://placeskull.com/252" alt="" />
+            <img src="https://placeskull.com/252" alt="" />
             <p
               class="pt-4 text-lg font-semibold leading-relaxed text-center text-gray-900">
               Portfolio WIP.
@@ -92,7 +92,7 @@
           </div>
           <div class="col-span-12 md:col-span-3">
             <div class="p-1 md:p-4">
-              <img src="http://placeskull.com/550" alt="About" />
+              <img src="https://placeskull.com/550" alt="About" />
             </div>
           </div>
           <div class="col-span-12 duration-500 delay-1000 md:col-span-9">
