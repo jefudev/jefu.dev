@@ -143,21 +143,10 @@
               </p>
               <p class="p-4 text-xl leading-relaxed text-gray-100 ">
                 Jeff Lau works as a UX/Front-end developer at Circle Graphics,
-                where he builds and maintain its flagship eCommerce websites. He
-                integrates his previous interest in interdisciplinary art with
-                UX principles to create products that are useful, accessible,
-                and enjoyable to use.
-                <!-- an experienced web developer, designer, and artist. When growing
-                up in San Francisco, he spent his time building computers and
-                learning new art mediums. It wasn't until college where he
-                studied Interdiscplinary Computing and the Art(ICAM) that he was
-                able to During his undergrad at UC San Diego, Driven by [], he
-                takes pride in providing I believe the intersection between art
-                and technology the closest reality we have from science fiction.
-                I love Beginn design and tech growing up. box of crayons with a
-                sharpener on the back. learning to code with a turtle
-                [https://www.eclipse.org/Xtext/documentation/208_tortoise.html]
-                middle end -->
+                where he builds and maintain its eCommerce websites. He
+                integrates his studies in interdisciplinary art with UX
+                principles to create products that are useful, accessible, and
+                enjoyable to use.
               </p>
             </div>
           </Inview>
